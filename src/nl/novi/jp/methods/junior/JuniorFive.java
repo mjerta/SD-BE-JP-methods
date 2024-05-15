@@ -9,5 +9,15 @@ package nl.novi.jp.methods.junior;
  * https://duckduckgo.com/?q=java+to+uppercase
  */
 
+
 public class JuniorFive {
+  public static void main(String[] args) {
+    String myString = "test";
+    toCapital(myString);
+
+  }
+
+  public static void toCapital(String input) {
+    System.out.println(input.toUpperCase());
+  }
 }

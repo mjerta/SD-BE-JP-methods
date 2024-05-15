@@ -9,6 +9,14 @@ package nl.novi.jp.methods.medior;
 public class MediorTwo {
 
     public static void main(String[] args) {
+        int age = 16;
+        boolean ageChecker  = isOldEnough(age);
+
+        if (ageChecker) {
+            printProceed();
+        } else {
+            printUnderAgeWarning();
+        }
 
     }
 

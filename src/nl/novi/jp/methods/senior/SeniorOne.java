@@ -31,5 +31,36 @@ public class SeniorOne {
         curstomerNames.add("henk den hartog");
         curstomerNames.add("mo el-mecky");
         curstomerNames.add("fredje kadetje");
+
+        convertNames(curstomerNames);
+    }
+
+    public static void convertNames(List<String> names) {
+        for (String name : names) {
+
+            int indexSpace = name.indexOf(" ");
+            int lastIndexSpace = name.lastIndexOf(" ");
+            String changeFirstName = name.substring(0,1).toUpperCase() + name.substring(1,indexSpace);
+            String changeLastName;
+            if(name.contains("-")) {
+                int hyphenIndex = name.indexOf("-");
+                changeLastName =
+                                name.substring(indexSpace+1,hyphenIndex+1) +
+                                name.substring(hyphenIndex+1,hyphenIndex+2).toUpperCase() +
+                                name.substring(hyphenIndex+2);
+            } else if( indexSpace != lastIndexSpace) {
+                changeLastName =
+                                name.substring(indexSpace+1,lastIndexSpace+1) +
+                                name.substring(lastIndexSpace+1,lastIndexSpace+2).toUpperCase() +
+                                name.substring(lastIndexSpace+2);
+            }
+            else {
+                changeLastName =
+                                name.substring(indexSpace+1,indexSpace+2).toUpperCase() +
+                                name.substring(indexSpace+2);
+            }
+            String fullNameChanged = changeFirstName + " " + changeLastName;
+            System.out.println(fullNameChanged);
+        }
     }
 }

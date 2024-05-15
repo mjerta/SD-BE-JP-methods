@@ -25,12 +25,21 @@ public class SeniorTwo {
         englishDutchWords.put("cup","beker");
         englishDutchWords.put("screen","scherm");
 
-        translate(englishDutchWords, "cup");
+        String returnValue = translate(englishDutchWords, "screen");
+        System.out.println(returnValue);
     }
 
     public static String translate(Map<String, String> words, String word) {
-
-        return "";
+        String output = "";
+        for (String key : words.keySet()) {
+            if(word == key) {
+                output = words.get(key);
+            }
+        }
+        if (output == "") {
+            return "This word does not exist";
+        }
+        return output;
     }
 
 }

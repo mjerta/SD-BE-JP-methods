@@ -1,4 +1,5 @@
 package nl.novi.jp.methods.medior;
+import java.util.ArrayList; // import the ArrayList class
 
 /**
  * Gegeven: Een methode waarin je een string kunt stoppen. Deze methode transformeert de String op zo'n manier dat
@@ -17,7 +18,7 @@ public class MediorThree {
     }
 
     public static void printName(String firstName, String lastName) {
-        System.out.println("Naam: " + firstName + " " + lastName);
+        System.out.println("Naam: " + firstLetterToUpperCase(firstName) + " " + firstLetterToUpperCase(lastName));
     }
 
     public static String firstLetterToUpperCase(String name) {
